@@ -1,5 +1,8 @@
 let boxes = document.querySelectorAll('.box');
 let resetbutton = document.getElementById('reset');
+let msgContainer = document.querySelector('.msg-container');
+let msg = document.getElementById('msg');
+let closeMsgButton = document.getElementById('close-msg');
 
 let turnO = true;
 
@@ -24,6 +27,7 @@ boxes.forEach((box) => {
             box.innerText = 'X';
             turnO = true;
         }
+        box.disabled = true;
         checkwin() ;
 });
 });
@@ -31,12 +35,20 @@ const checkwin = () => {
     for(let pattern of winpatterns){
         let [a, b, c] = pattern;
         if(boxes[a].innerText && boxes[a].innerText === boxes[b].innerText && boxes[a].innerText === boxes[c].innerText){
-            alert(`${boxes[a].innerText} wins!`);
+            msg.innerText = `Winner: ${boxes[a].innerText}`;
+            msgContainer.style.display = 'block';
+            
             boxes.forEach((box) => box.disabled = true);
             return;
         }
     }
 };
+closeMsgButton.addEventListener('click', () => {
+                boxes.forEach((box) => {
+                    box.innerText = '';
+                    box.disabled = false;
+                });
+            }); 
 resetbutton.addEventListener('click', () => {
     boxes.forEach((box) => {
         box.innerText = '';
