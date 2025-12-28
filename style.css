@@ -14,8 +14,13 @@ body{
 }
 
 .game{
-    height:60vmin;
-    width:60vmin;
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
 }
 
 .box{
@@ -26,6 +31,26 @@ body{
     box-shadow: 0 0 1rem black;
     font-size:8vmin;
     color: #b0413e;
+    background-color: aliceblue;
 }
-
+#reset{
+    padding:1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color:white;
+    border-radius: 1rem;
+    border:none;
+}
+#msg{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+#close-msg{
+    padding:1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color:white;
+    border-radius: 1rem;
+    border:none;
+}
 
