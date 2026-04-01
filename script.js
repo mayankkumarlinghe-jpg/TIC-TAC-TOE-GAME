@@ -1,3 +1,4 @@
+// DOM Elements
 const boxes = document.querySelectorAll('.box');
 const resetBtn = document.getElementById('reset');
 const newGameBtn = document.getElementById('new-game');
